@@ -15,4 +15,6 @@ import { Token } from '@angular/compiler';
   styleUrls: ['./create-admin.component.css']
 })
 export class CreateAdminComponent {
+
+  constructor(public LoginService: LoginService) { }
 }

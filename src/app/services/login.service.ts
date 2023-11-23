@@ -12,4 +12,9 @@ export class LoginService {
     // console.log(data)
     return this.http.post(this.url, data, { observe: 'response' });
   }
+  logoutUser()
+  {
+    localStorage.removeItem("token")
+    // localStorage.destroy(token)
+  }
 }

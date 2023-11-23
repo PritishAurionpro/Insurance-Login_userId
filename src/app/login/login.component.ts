@@ -57,22 +57,25 @@ export class LoginComponent {
         //store user info in data service vars
         this.data.userId = this.user.userId
         this.data.userName = this.user.userName
-
+        
         //admin or emp
         if (this.user.roleName == "admin")
-          this.router.navigateByUrl("/createadmin"); //admin dashboard
-        if (this.user.roleName == "employee")
-          this.router.navigateByUrl("/createemployee"); //employee dashboard
-        if (this.user.roleName == "agent")
-          this.router.navigateByUrl("/createagent"); //agent dashboard
-        if (this.user.roleName == "customer")
-          this.router.navigateByUrl("/createcustomer") //customer dashBoard
-        else
-          this.router.navigateByUrl("/createadmin"); //
-      },
-      error: (errorResponse: HttpErrorResponse) => {
-        console.log(errorResponse)
-      }
-    })
-  }
+        this.router.navigateByUrl("/createadmin"); //admin dashboard
+      if (this.user.roleName == "employee")
+      this.router.navigateByUrl("/createemployee"); //employee dashboard
+    if (this.user.roleName == "agent")
+    this.router.navigateByUrl("/createagent"); //agent dashboard
+  if (this.user.roleName == "customer")
+  this.router.navigateByUrl("/createcustomer") //customer dashBoard
+else
+this.router.navigateByUrl("/createadmin"); //
+},
+error: (errorResponse: HttpErrorResponse) => {
+  console.log(errorResponse)
+}
+})
+}
+logout(){
+  localStorage.removeItem("token");
+}
 }
