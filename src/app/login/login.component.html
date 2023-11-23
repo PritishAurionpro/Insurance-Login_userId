@@ -1,0 +1,21 @@
+<h1>Login User</h1>
+<form [formGroup]="loginUserForm" (ngSubmit)=" loginUser(loginUserForm.value)">
+  User Id: <input type="number" placeholder="Enter user id" formControlName = "userId">
+  <span *ngIf="userIdValidator && userIdValidator.invalid && userIdValidator.touched">
+    Please enter valid user Id</span>
+  <br><br>
+  <!-- User Name: --> <input type="hidden" placeholder="Enter user name" formControlName = "userName"> 
+  <span *ngIf="userNameValidator && userNameValidator.invalid && userNameValidator.touched">
+    Please enter valid user name</span>
+  <br><br>
+  Password: <input type="password" placeholder="Enter a password" formControlName = "password">
+  <span *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched">
+    enter password</span>
+  <br><br>
+  <!-- RoleId: --> <input type="hidden" placeholder="Enter a RoleId" formControlName = "roleId">
+  <span *ngIf="roleIdValidator && roleIdValidator.invalid && roleIdValidator.touched">
+    enter role id</span>
+  <br><br>
+  <button [disabled]="loginUserForm.invalid">Login</button> 
+</form>
+
